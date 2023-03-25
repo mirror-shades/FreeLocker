@@ -1,0 +1,80 @@
+p {
+  color: black;
+  text-align: center;
+}
+div {
+  padding: 20px;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+p,
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(13, 2, 53);
+}
+label {
+  font-family: "Courier New", Courier, monospace;
+}
+a {
+  color: rgb(13, 2, 53);
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgb(13, 2, 53);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 28px;
+  max-width: 20%;
+  text-decoration: none;
+  transition: all 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;
+}
+
+button:active,
+button:hover {
+  outline: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.19);
+}
+
+@media (min-width: 768px) {
+  button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    min-width: 200px;
+    padding: 5px 6px;
+  }
+}

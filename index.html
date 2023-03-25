@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./src/locklogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="ArbiLocker" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>ArbiLocker</title>
+  </head>
+  <body
+    style="
+      height: 100%;
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(114, 204, 231),
+        rgb(3, 10, 70)
+      );
+      background-attachment: fixed;
+    "
+  >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div style="margin-top: 50px; margin-left: 80%" class="left-half">
+      <button
+        style="
+          background-color: transparent;
+          overflow: hidden;
+          border: none;
+          width: 75px;
+          height: 60px;
+        "
+        class="enableEthereumButton"
+      >
+        <img
+          src="https://i.ibb.co/HrykYhp/metamask.png"
+          width="65"
+          height="65"
+        />
+      </button>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
