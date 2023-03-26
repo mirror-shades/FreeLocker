@@ -1,4 +1,4 @@
-import Webpage from "./Webpage";
+import Animations from "./Animations";
 import "./App.css";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -14,18 +14,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { loading } = this.state;
-
-    if (loading) {
-      // if your component doesn't have to wait for an async action, remove this block
-      return <div />; // render null when app is not ready
-    } else {
-      return (
-        <div>
-          <Webpage />;
-        </div>
-      );
-    }
+    return (
+      <div>
+        <Animations />
+      </div>
+    );
   }
 }
 

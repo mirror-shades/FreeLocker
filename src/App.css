@@ -28,6 +28,31 @@ button {
   margin-right: auto;
 }
 
+.mui {
+  align-items: center;
+  justify-content: center;
+  left: 1000px;
+  border-color: black;
+  border-width: 1;
+  border-style: solid;
+}
+
+.above {
+  display: flex;
+  position: absolute;
+  top: 100;
+  left: 0;
+  z-index: 5;
+}
+
+.below {
+  display: flex;
+  position: absolute;
+  top: 100;
+  left: 0;
+  z-index: 1;
+}
+
 button {
   display: block;
   margin-left: auto;

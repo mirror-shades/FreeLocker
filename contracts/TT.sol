@@ -25,7 +25,7 @@ abstract contract Context {
     }
 }
 
-// File: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol
+// File: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/bIERC20Metadata.sol
 
 
 pragma solidity ^0.8.0;
@@ -33,7 +33,7 @@ pragma solidity ^0.8.0;
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
  */
-interface IERC20 {
+interface bIERC20 {
     /**
      * @dev Returns the amount of tokens in existence.
      */
@@ -120,7 +120,7 @@ pragma solidity ^0.8.0;
  *
  * _Available since v4.1._
  */
-interface IERC20Metadata is IERC20 {
+interface bIERC20Metadata is bIERC20 {
     /**
      * @dev Returns the name of the token.
      */
@@ -137,14 +137,14 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-// File: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
+// File: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/bIERC20.sol
 
 
 pragma solidity ^0.8.0;
 
 
 /**
- * @dev Implementation of the {IERC20} interface.
+ * @dev Implementation of the {bIERC20} interface.
  *
  * This implementation is agnostic to the way tokens are created. This means
  * that a supply mechanism has to be added in a derived contract using {_mint}.
@@ -166,9 +166,9 @@ pragma solidity ^0.8.0;
  *
  * Finally, the non-standard {decreaseAllowance} and {increaseAllowance}
  * functions have been added to mitigate the well-known issues around setting
- * allowances. See {IERC20-approve}.
+ * allowances. See {bIERC20-approve}.
  */
-contract ERC20 is Context, IERC20, IERC20Metadata {
+contract ERC20 is Context, bIERC20, bIERC20Metadata {
     mapping(address => uint256) private _balances;
 
     mapping(address => mapping(address => uint256)) private _allowances;
@@ -218,28 +218,28 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      *
      * NOTE: This information is only used for _display_ purposes: it in
      * no way affects any of the arithmetic of the contract, including
-     * {IERC20-balanceOf} and {IERC20-transfer}.
+     * {bIERC20-balanceOf} and {bIERC20-transfer}.
      */
     function decimals() public view virtual override returns (uint8) {
         return 18;
     }
 
     /**
-     * @dev See {IERC20-totalSupply}.
+     * @dev See {bIERC20-totalSupply}.
      */
     function totalSupply() public view virtual override returns (uint256) {
         return _totalSupply;
     }
 
     /**
-     * @dev See {IERC20-balanceOf}.
+     * @dev See {bIERC20-balanceOf}.
      */
     function balanceOf(address account) public view virtual override returns (uint256) {
         return _balances[account];
     }
 
     /**
-     * @dev See {IERC20-transfer}.
+     * @dev See {bIERC20-transfer}.
      *
      * Requirements:
      *
@@ -252,14 +252,14 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     }
 
     /**
-     * @dev See {IERC20-allowance}.
+     * @dev See {bIERC20-allowance}.
      */
     function allowance(address owner, address spender) public view virtual override returns (uint256) {
         return _allowances[owner][spender];
     }
 
     /**
-     * @dev See {IERC20-approve}.
+     * @dev See {bIERC20-approve}.
      *
      * Requirements:
      *
@@ -271,7 +271,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     }
 
     /**
-     * @dev See {IERC20-transferFrom}.
+     * @dev See {bIERC20-transferFrom}.
      *
      * Emits an {Approval} event indicating the updated allowance. This is not
      * required by the EIP. See the note at the beginning of {ERC20}.
@@ -303,7 +303,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * @dev Atomically increases the allowance granted to `spender` by the caller.
      *
      * This is an alternative to {approve} that can be used as a mitigation for
-     * problems described in {IERC20-approve}.
+     * problems described in {bIERC20-approve}.
      *
      * Emits an {Approval} event indicating the updated allowance.
      *
@@ -320,7 +320,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * @dev Atomically decreases the allowance granted to `spender` by the caller.
      *
      * This is an alternative to {approve} that can be used as a mitigation for
-     * problems described in {IERC20-approve}.
+     * problems described in {bIERC20-approve}.
      *
      * Emits an {Approval} event indicating the updated allowance.
      *
