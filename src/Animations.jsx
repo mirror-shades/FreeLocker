@@ -1,55 +1,34 @@
 import TestnetWebpage from "./TestnetWebpage";
 import MainnetWebpage from "./MainnetWebpage";
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import { FormControlLabel, Collapse, Switch } from "@mui/material";
+//import React, { useState, useEffect } from "react";
+import { FormControlLabel, Collapse, Switch, Box, Grid } from "@mui/material";
 
-const Input = () => {
-  const [checked, setChecked] = React.useState(false);
-  const [net, setNet] = React.useState("Test");
+import React, { useState } from "react";
+import { Animated, View, Button } from "react-native";
 
-  const handleChange = () => {
-    if (checked == false) {
-      setNet("Main");
-    }
-    if (checked == true) {
-      setNet("Test");
-    }
-    setChecked((prev) => !prev);
+const Component1 = () => <View style={{ backgroundColor: "red", flex: 1 }} />;
+
+const Component2 = () => <View style={{ backgroundColor: "blue", flex: 1 }} />;
+
+const SwitchComponent = () => {
+  const [showComponent1, setShowComponent1] = useState(true);
+  const [slideAnim] = useState(new Animated.Value(0));
+
+  const handlePress = () => {
+    Animated.timing(slideAnim, {
+      toValue: showComponent1 ? -100 : 0,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+    setShowComponent1(!showComponent1);
   };
-  var mainNet = <MainnetWebpage />;
-  var testNet = <TestnetWebpage />;
+
   return (
-    <div className="mui">
-      <FormControlLabel
-        control={<Switch checked={checked} onChange={handleChange} />}
-        label={net}
-        sx={{ width: 300, color: "success.main" }}
-      />
-      <div className="above">
-        <Collapse
-          orientation="horizontal"
-          in={!checked}
-          appear={0}
-          enter={1000}
-          exit={0}
-        >
-          {testNet}
-        </Collapse>
-      </div>
-      <div className="below">
-        <Collapse
-          orientation="horizontal"
-          in={checked}
-          appear={0}
-          enter={1000}
-          exit={0}
-        >
-          {mainNet}
-        </Collapse>
-      </div>
+    <div>
+      <p>hello world</p>
     </div>
   );
 };
 
-export default Input;
+export default SwitchComponent;
